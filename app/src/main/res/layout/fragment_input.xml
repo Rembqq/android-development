@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/facultyGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/courseGroup"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.25">
+
+        <RadioButton
+            android:id="@+id/radio_IXF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ІХФ" />
+
+        <RadioButton
+            android:id="@+id/radio_PBF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ПБФ" />
+
+        <RadioButton
+            android:id="@+id/radio_RTF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="РТФ" />
+
+        <RadioButton
+            android:id="@+id/radio_FBMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ФБМІ" />
+
+        <RadioButton
+            android:id="@+id/radio_FEL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ФЕЛ" />
+
+        <RadioButton
+            android:id="@+id/radio_FIOT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ФІОТ" />
+
+        <RadioButton
+            android:id="@+id/radio_FL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ФЛ" />
+
+        <RadioButton
+            android:id="@+id/radio_FMM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ФММ" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/courseGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/facultyGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.315"
+        >
+
+        <RadioButton
+            android:id="@+id/radio_course1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 курс" />
+
+        <RadioButton
+            android:id="@+id/radio_course2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 курс" />
+
+        <RadioButton
+            android:id="@+id/radio_course3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 курс" />
+
+        <RadioButton
+            android:id="@+id/radio_course4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 курс" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="173dp"
+        android:layout_height="62dp"
+        android:text="Confirm"
+        android:textSize="18.dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

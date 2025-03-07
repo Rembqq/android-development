@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "lab1_radio-buttons"
+rootProject.name = "Faculty-Course-form"
 include(":app")
  

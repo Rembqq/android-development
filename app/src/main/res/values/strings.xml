@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">lab1_radio-buttons</string>
+    <string name="app_name">Faculty-Course-form</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="choice">Вибрано:</string>
 </resources>

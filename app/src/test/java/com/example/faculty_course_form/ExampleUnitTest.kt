@@ -1,4 +1,4 @@
-package com.example.lab1_radio_buttons
+package com.example.faculty_course_form
 
 import org.junit.Test
 
