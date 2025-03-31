@@ -116,17 +116,4 @@
         app:layout_constraintVertical_bias="0.8"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/btnOpen"
-        android:layout_width="173dp"
-        android:layout_height="62dp"
-        android:text="Open"
-        android:textSize="18.dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915"
-        tools:ignore="HardcodedText" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

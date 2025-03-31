@@ -1,4 +1,4 @@
-package com.example.faculty_course_form
+package com.example.dbapp
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

@@ -1,6 +1,5 @@
-package com.example.faculty_course_form
+package com.example.dbapp
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,16 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 
 
 class InputFragment : Fragment() {
-    private var defaultFaculty: String = "ІХФ";
-    private var defaultCourse: String = "1 курс";
-
-    private var selectedFaculty: String = defaultFaculty
-    private var selectedCourse: String = defaultCourse
+    private var selectedFaculty: String = "ІХФ"
+    private var selectedCourse: String = "1 курс"
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,7 +23,6 @@ class InputFragment : Fragment() {
         val facultyGroup = view.findViewById<RadioGroup>(R.id.facultyGroup)
         val courseGroup = view.findViewById<RadioGroup>(R.id.courseGroup)
         val btnConfirm = view.findViewById<Button>(R.id.btnConfirm)
-        val btnOpen = view.findViewById<Button>(R.id.btnOpen)
 
         facultyGroup.setOnCheckedChangeListener {_, checkedId ->
             selectedFaculty = when (checkedId) {
@@ -44,11 +38,9 @@ class InputFragment : Fragment() {
 //                R.id.radio_FPM -> "ФПМ"
 //                R.id.radio_FMF -> "ФМФ"
 //                R.id.radio_HTF -> "ХТФ"
-                else -> defaultFaculty
+                else -> "ІХФ"
             }
         }
-
-        //bt
 
         courseGroup.setOnCheckedChangeListener { _, checkedId ->
             selectedCourse = when (checkedId) {
@@ -56,30 +48,24 @@ class InputFragment : Fragment() {
                 R.id.radio_course2 -> "2 курс"
                 R.id.radio_course3 -> "3 курс"
                 R.id.radio_course4 -> "4 курс"
-                else -> defaultCourse
+                else -> "1 курс"
             }
         }
 
         btnConfirm.setOnClickListener {
-
-            val resultText = "Вибрано: $selectedFaculty, $selectedCourse"
-
-            // Збереження у локальне сховище (файл)
-            StorageHelper.saveData(requireContext(), resultText)
-
-            // Відображення повідомлення про успішне збереження
-            Toast.makeText(requireContext(), "Дані збережено!", Toast.LENGTH_SHORT).show()
-
             val bundle = Bundle().apply {
-                putString("resultText", resultText)
+                putString("resultText", "Вибрано: $selectedFaculty, $selectedCourse")
             }
 
+            // Перехід до ResultFragment із передачею даних через Bundle
+//            val resultFragment = ResultFragment()
+//            resultFragment.arguments = bundle
+//
+//            // Виконуємо перехід
+//            parentFragmentManager.beginTransaction()
+//                .replace(R.id.fragment_container, resultFragment)
+//                .commit()
             findNavController().navigate(R.id.action_inputFragment_to_resultFragment, bundle)
-        }
-
-        btnOpen.setOnClickListener {
-            val intent = Intent(activity, StorageActivity::class.java)
-            startActivity(intent)
         }
 
         return view;
