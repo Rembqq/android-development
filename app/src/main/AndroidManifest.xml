@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FacultyCourseform"
         tools:targetApi="31">
+        <activity android:name=".StorageActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

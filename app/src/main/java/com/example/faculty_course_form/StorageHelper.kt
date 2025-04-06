@@ -20,5 +20,10 @@ object StorageHelper {
             emptyList()
         }
     }
+    
+    fun clearData(context: Context) {
+        val file = File(context.filesDir, FILE_NAME)
+        file.delete() // Видаляє файл (очищає сховище)
+    }
 
 }

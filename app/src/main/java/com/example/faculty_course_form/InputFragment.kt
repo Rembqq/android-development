@@ -40,15 +40,9 @@ class InputFragment : Fragment() {
                 R.id.radio_FIOT -> "ФІОТ"
                 R.id.radio_FL -> "ФЛ"
                 R.id.radio_FMM -> "ФММ"
-//                R.id.radio_FSP -> "ФСП"
-//                R.id.radio_FPM -> "ФПМ"
-//                R.id.radio_FMF -> "ФМФ"
-//                R.id.radio_HTF -> "ХТФ"
                 else -> defaultFaculty
             }
         }
-
-        //bt
 
         courseGroup.setOnCheckedChangeListener { _, checkedId ->
             selectedCourse = when (checkedId) {
