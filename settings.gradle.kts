@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Faculty-Course-form"
 include(":app")
 include(":dbapp")
+include(":lab4")
