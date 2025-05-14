@@ -60,4 +60,8 @@ dependencies {
 
     // GPUImage
     implementation("jp.co.cyberagent.android:gpuimage:2.1.0")
+    implementation(libs.androidx.lifecycle.common.jvm)
+
+    implementation("androidx.camera:camera-extensions:1.3.0")
+
 }

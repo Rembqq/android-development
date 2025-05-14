@@ -3,14 +3,20 @@ package com.example.lab6
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.Surface
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LifecycleOwner
 import com.example.lab6.databinding.ActivityCameraBinding
+import jp.co.cyberagent.android.gpuimage.GPUImageView
 
 class CameraActivity : AppCompatActivity() {
 
@@ -33,6 +39,7 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
+
     private fun setupFilter() {
         val filterNames = FilterType.values().map { it.name }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, filterNames)
@@ -40,6 +47,9 @@ class CameraActivity : AppCompatActivity() {
         binding.filterSpinner.adapter = adapter
 
         filterProcessor = FilterProcessor(this, binding.viewFinder)
+
+        // 🔥 Стартуем камеру
+        filterProcessor.startCamera(this)
 
         binding.filterSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
